@@ -9,7 +9,7 @@ namespace JungleStack
 {
     class Program
     {
-        private static readonly Menu Menu = new Menu("JungleStack", "jungleStack", true);
+        private static readonly Menu Menu = new Menu("EasyStack", "jungleStack", true);
 
         private static readonly Vector3[] StackRouteRadiant =
         {
@@ -110,7 +110,7 @@ namespace JungleStack
                             return;
                     }
                     var units = player.Selection.ToList();
-                    pullCreep = (Unit)units.FirstOrDefault(unit => unit is Unit && ((Unit)unit).IsControllable && ((Unit)unit).IsRanged);
+                    pullCreep = (Unit)units.FirstOrDefault(unit => unit is Unit);
                     if (pullCreep != null)
                     {
                         pullCreep.Move(route.Last());
